@@ -1,1 +1,153 @@
+DataDeck: Steam Market Analytics System
+Overview
 
+DataDeck is a full-stack data analytics project that demonstrates the end-to-end process of working with real-world data.
+This project analyzes Steam’s game market by cleaning raw Kaggle datasets, storing them in a relational database, and visualizing trends through an interactive Tableau dashboard.
+
+The goal of DataDeck is to highlight practical skills in data cleaning, SQL integration, and business intelligence dashboard design using modern analytical tools.
+
+Objectives
+
+Transform raw Kaggle datasets into a structured database.
+
+Build a reproducible ETL (Extract, Transform, Load) pipeline using Python and SQLite.
+
+Analyze game trends such as genre distribution, developer activity, and pricing behavior.
+
+Visualize findings through an interactive Tableau dashboard.
+
+Data Source
+
+The raw datasets used in this project are sourced from Kaggle and are not included in this repository due to GitHub’s file size limitations.
+
+You can download them directly from:
+
+Steam Games Dataset — Nik Davis
+
+Steam Reviews Dataset — Andrew MVD
+
+After downloading, place the files in:
+
+data/raw/
+
+
+and run:
+
+python src/clean_data.py
+python src/load_to_sql.py
+
+
+This will prepare the cleaned dataset and local database.
+
+Project Structure
+datadeck-steam-analytics/
+│
+├── data/
+│   ├── raw/              # Kaggle datasets (ignored in Git)
+│   ├── cleaned/          # Processed CSV files for analysis
+│   └── datadeck.db       # SQLite database
+│
+├── notebooks/
+│   └── analysis.ipynb    # SQL queries and data visualization in Python
+│
+├── src/
+│   ├── clean_data.py     # Data cleaning and preprocessing
+│   └── load_to_sql.py    # Load cleaned data into SQLite
+│
+├── tableau/
+│   └── dashboard_links.txt
+│
+├── visuals/
+│   └── dashboard_preview.png
+│
+├── requirements.txt
+└── README.md
+
+Technologies Used
+
+Python: Data cleaning, preprocessing, and ETL
+
+Libraries: Pandas, Matplotlib, SQLite3
+
+SQLite: Local relational database for structured storage
+
+Tableau Public: Interactive dashboard design and publication
+
+Jupyter Notebook: Exploratory data analysis and visualization
+
+Methodology
+
+Data Cleaning (Python):
+The raw Steam dataset was filtered to retain relevant columns, remove missing values, and standardize formats.
+
+Database Creation (SQLite):
+Cleaned data was loaded into a SQLite database for efficient querying and reproducibility.
+
+Exploratory Data Analysis (Python):
+SQL queries were used to extract key insights about genres, developers, and pricing.
+Matplotlib visualizations were used to validate patterns before moving into Tableau.
+
+Dashboard Development (Tableau):
+The final analysis was visualized using Tableau Public, featuring three key dashboards:
+
+Steam Overview
+
+Developer Insights
+
+Ratings and Pricing Relationships
+
+Interactive Dashboard
+
+You can explore the live dashboard on Tableau Public here:
+View DataDeck: Steam Market Analytics System
+
+Dashboards Included
+
+Steam Overview — Top genres by total game price and platform distribution.
+
+Developer Insights — Leading developers by game count and genre contribution.
+
+Ratings and Pricing — Visualizing the relationship between price and positive ratings.
+
+Key Insights
+
+Action and Indie genres account for the majority of Steam’s total market value.
+
+A small subset of developers produce the largest number of games.
+
+Game price and positive ratings show only a weak correlation, suggesting pricing does not strongly predict user sentiment.
+
+How to Reproduce
+
+Clone the repository:
+
+git clone https://github.com/yourusername/datadeck-steam-analytics.git
+cd datadeck-steam-analytics
+
+
+Create a virtual environment and install dependencies:
+
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+
+Add raw data to data/raw/ and run the ETL pipeline:
+
+python src/clean_data.py
+python src/load_to_sql.py
+
+
+Launch Jupyter Notebook for local analysis:
+
+jupyter notebook
+
+Results and Deliverables
+
+Cleaned and normalized Steam dataset.
+
+SQLite database for efficient querying.
+
+Jupyter notebook demonstrating SQL analysis and Python visualizations.
+
+Published Tableau dashboard accessible via Tableau Public.
